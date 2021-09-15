@@ -1,0 +1,74 @@
+<!doctype html>
+<html ng-app="lista">
+<head>
+  <meta charset="utf-8">
+  <title>Hotel</title>
+  <link rel="stylesheet" type="text/css" href="bootstrap.css">
+  <style>
+    .jumbotron {
+      width: center;
+      text-align: center;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    .table{
+      margin-top: 20px;
+    }
+    .form-control{
+      margin-bottom: 5px;
+    }
+  </style>
+  <script src="angular.js" type="text/javascript"></script>
+  <script>
+    angular.module("lista", []);
+    angular.module("lista").controller("listaCtrl", function ($scope){
+      $scope.app = "Fazer Check-in";
+
+      $scope.clientes = [
+            {nome: "pedro", telefone: "99999999", cpf: "33333333", cep: "33333333", tipodequarto: "4444444", datadecheckin: "44444444", datadecheckout: "4444444"}
+      ];
+      $scope.adicionarCliente = function (cliente) {
+        $scope.clientes.push(angular.copy(cliente));
+        delete $scope.cliente;
+      }
+    });
+  </script>
+  <base href="/">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+</head>
+<body ng-controller="listaCtrl">
+  <div class="jumbotron">
+    <h4>{{app}}</h4>
+    <table class="table table-striped ">
+        <tr>
+          <th>Nome</th>
+          <th>Telefone</th>
+          <th>CPF</th>
+          <th>CEP</th>
+          <th>Tipo de Quarto</th>
+          <th>Data de Check-in</th>
+          <th>Data de Check-out</th>
+
+        </tr>
+        <tr ng-repeat="cliente in clientes">
+          <td ng-repeat="(key,value) in cliente">
+            {{value}}
+          </td>
+        </tr>
+      </table>
+      <hr/>
+    </table>
+    <hr/>
+    <input class="form-control" type="text" ng-model="cliente.nome" placeholder="Nome"/>
+    <input class="form-control" type="text" ng-model="cliente.telefone" placeholder="Telefone"/>
+    <input class="form-control" type="text" ng-model="cliente.cpf" placeholder="CPF"/>
+    <input class="form-control" type="text" ng-model="cliente.cep" placeholder="CEP"/>
+    <input class="form-control" type="text" ng-model="cliente.tipodequarto" placeholder="Tipo de Quarto"/>
+    <input class="form-control" type="text" ng-model="cliente.datadecheckin" placeholder="Data Check - in"/>
+    <input class="form-control" type="text" ng-model="cliente.datacheckout" placeholder="Data Check - out"/>
+    <button class="btn btn-primary btn-block" ng-click="adicionarCliente(cliente)">Adicionar cliente</button>
+
+  </div>
+</body>
+</html>
