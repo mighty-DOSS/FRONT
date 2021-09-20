@@ -20,17 +20,15 @@
   </style>
   <script src="angular.js" type="text/javascript"></script>
   <script>
-    angular.module("lista", []);
-    angular.module("lista").controller("listaCtrl", function ($scope){
-      $scope.app = "Lista Telefonica";
-      $scope.contatos = [
-            {nome: "pedro", telefone: "99999999"},
-            {nome: "ana", telefone: "8888888"},
-            {nome: "maria", telefone: "55555555"}
+    angular.module("listaquarto", []);
+    angular.module("listaquarto").controller("listaQCtrl", function ($scope){
+      $scope.app = "Lista Quartos";
+      $scope.quartos = [
+            
       ];
-      $scope.adicionarContato = function (contato) {
-        $scope.contatos.push(angular.copy(contato));
-        delete $scope.contato;
+      $scope.adicionarQuarto = function (quarto) {
+        $scope.quartos.push(angular.copy(quarto));
+        delete $scope.quarto;
       }
     });
   </script>
@@ -38,24 +36,23 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="icon" type="image/x-icon" href="favicon.ico">
 </head>
-<body ng-controller="listaCtrl">
+<body ng-controller="listaQCtrl">
   <div class="jumbotron">
-    <h4>{{app}}</h4>
+    <!-- <h4>{{app}}</h4>
     <table class="table table-striped ">
       <tr>
-        <th>Nome</th>
-        <th>Telefone</th>
+        <th>Numero</th>
+        <th>Disponibilidade</th>
       </tr>
-      <tr ng-repeat="contato in contatos">
-        <td ng-repeat="(key,value) in contato">
+      <tr ng-repeat="quarto in quartos">
+        <td ng-repeat="(key,value) in quarto">
           {{value}}
         </td>
       </tr>
     </table>
-    <hr/>
-    <input class="form-control" type="text" ng-model="contato.nome" placeholder="Nome"/>
-    <input class="form-control" type="text" ng-model="contato.telefone" placeholder="Telefone"/>
-    <button class="btn btn-primary btn-block" ng-click="adicionarContato(contato)">Adicionar Contato</button>
+    <hr/> -->
+    <button class="btn btn" onclick="">Check-in</button>
+    <button class="btn btn-primary btn-block" ng-click="adicionarContato(contato)">Ver quarto</button>
   </div>
 </body>
 </html>
