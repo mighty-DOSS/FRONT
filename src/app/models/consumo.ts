@@ -1,5 +1,5 @@
 export interface Consumo {
-    id: string;
-    codConsumo: string;
-    valorTotal: string;
+    id: number;
+    codConsumo: number;
+    valorTotal: number;
 }

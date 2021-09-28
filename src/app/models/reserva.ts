@@ -1,9 +1,9 @@
 
 export interface Reserva {
     Cliente: string;
-    Quarto: string;
-    DataCheckin: string;
-    DataCheckout: string;
-    ValorTotal: string;
-    CriadoEm: string;
+    Quarto: number;
+    DataCheckin: number;
+    DataCheckout: number;
+    ValorTotal: number;
+    CriadoEm: number;
 }
