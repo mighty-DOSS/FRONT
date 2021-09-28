@@ -32,7 +32,6 @@ import { ListarReservaComponent } from './components/views/reserva/listar-reserv
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    routing
   ],
   providers: [],
   bootstrap: [AppComponent]
