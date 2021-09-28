@@ -1,23 +1,22 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Cliente } from "../models/cliente";
-import { Produto } from "../models/produto";
 import { Observable } from "rxjs";
 
 @Injectable({
   providedIn: 'root'
 })
-export class ProdutoService {
-  private baseURL = "http://localhost:5000/api/produto";
+export class ClienteService {
+  private baseURL = "http://localhost:5000/api/cliente";
 
   constructor(private http: HttpClient) {}
 
-  list(): Observable<Produto[]> {
-      return this.http.get<Produto[]>(`${this.baseURL}/list`);
+  list(): Observable<Cliente[]> {
+      return this.http.get<Cliente[]>(`${this.baseURL}/list`);
   }
 
-  create(produto: Produto): Observable<Produto> {
-      return this.http.post<Produto>(`${this.baseURL}/create`, produto);
+  create(cliente: Cliente): Observable<Cliente> {
+      return this.http.post<Cliente>(`${this.baseURL}/create`, cliente);
   }
 }
 
