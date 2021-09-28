@@ -2,7 +2,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
-import { AppRoutingModule } from './app-routing.module';
+import { AppRoutingModule } from './app.routing.module';
 import { AppComponent } from './app.component';
 import { HttpClientModule } from "@angular/common/http";
 import { CadastrarProdutoComponent } from './components/views/produto/cadastrar-produto/cadastrar-produto.component';
@@ -31,7 +31,8 @@ import { ListarReservaComponent } from './components/views/reserva/listar-reserv
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    routing
   ],
   providers: [],
   bootstrap: [AppComponent]
