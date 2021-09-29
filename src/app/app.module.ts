@@ -6,7 +6,6 @@ import { AppRoutingModule } from './app.routing.module';
 import { AppComponent } from './app.component';
 import { HttpClientModule } from "@angular/common/http";
 import { CadastrarProdutoComponent } from './components/views/produto/cadastrar-produto/cadastrar-produto.component';
-import { ListarProdutosComponent } from './components/views/produto/listar-produtos/listar-produtos.component';
 import { ListarProdutoComponent } from './components/views/produto/listar-produto/listar-produto.component';
 import { ListarClienteComponent } from './components/views/cliente/listar-cliente/listar-cliente/listar-cliente.component';
 import { CadastrarClienteComponent } from './components/views/cliente/cadastrar-cliente/cadastrar-cliente.component';
@@ -19,7 +18,6 @@ import { ListarReservaComponent } from './components/views/reserva/listar-reserv
   declarations: [
     AppComponent,
     CadastrarProdutoComponent,
-    ListarProdutosComponent,
     ListarProdutoComponent,
     ListarClienteComponent,
     CadastrarClienteComponent,
