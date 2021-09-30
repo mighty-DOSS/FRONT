@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Quarto } from 'src/app/models/quarto';
+import { QuartoService } from 'src/app/services/quarto.service';
 
 @Component({
   selector: 'app-listar-quarto',
@@ -6,10 +8,18 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./listar-quarto.component.scss']
 })
 export class ListarQuartoComponent implements OnInit {
+  quartos: Quarto[] = [];
+  constructor(private service: QuartoService) {}
 
-  constructor() { }
+  ngOnInit():void {
+    this.service.list().subscribe((quartos) => {
 
-  ngOnInit(): void {
+      this.quartos = quartos;
+      for (let quarto of quartos)
+      {
+        console.log(quarto);
+      }
+
+    });
   }
-
 }
