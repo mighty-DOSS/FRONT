@@ -1,4 +1,6 @@
+import { Reserva } from './../../../../models/reserva';
 import { Component, OnInit } from '@angular/core';
+import { ReservaService } from 'src/app/services/reserva.service';
 
 @Component({
   selector: 'app-listar-reserva',
@@ -6,10 +8,18 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./listar-reserva.component.scss']
 })
 export class ListarReservaComponent implements OnInit {
+  reservas: Reserva[] = [];
+  constructor(private service: ReservaService) {}
 
-  constructor() { }
+  ngOnInit():void {
+    this.service.list().subscribe((reservas) => {
 
-  ngOnInit(): void {
+      this.reservas = reservas;
+      for (let reserva of reservas)
+      {
+        console.log(reserva);
+      }
+
+    });
   }
-
 }

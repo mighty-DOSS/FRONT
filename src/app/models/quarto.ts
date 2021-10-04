@@ -1,6 +1,6 @@
 export interface Quarto {
     Id: number;
-    Quarto: string;
+    NumeroQuarto: number;
     AndarQuarto: number;
     TipoQuarto: number;
     ValorDiaria: number;

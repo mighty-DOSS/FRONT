@@ -1,6 +1,7 @@
 import { Quarto } from './../../../../models/quarto';
 import { Component, OnInit } from '@angular/core';
 import { QuartoService } from 'src/app/services/quarto.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-cadastrar-quarto',
@@ -9,6 +10,7 @@ import { QuartoService } from 'src/app/services/quarto.service';
 })
 export class CadastrarQuartoComponent implements OnInit {
   id!: number;
+  numeroquarto!: number;
   andarquarto!: number;
   tipoquarto!: number;
   valordiaria!: number;
@@ -18,14 +20,15 @@ export class CadastrarQuartoComponent implements OnInit {
 
   ngOnInit(): void {}
 
-  cadastrarcli(): void{
+  cadastrarquarto(): void{
       let quarto: Quarto = {
         Id: this.id,
+        NumeroQuarto: this.numeroquarto,
         AndarQuarto: this.andarquarto,
         TipoQuarto: this.tipoquarto,
         ValorDiaria: this.valordiaria,
         Disponivel: this.disponivel,
-        Quarto: ''
+        
       };
       this.service.create(quarto).subscribe((quarto) =>{
         console.log(quarto);

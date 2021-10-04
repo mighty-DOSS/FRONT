@@ -20,7 +20,7 @@ export class CadastrarProdutoComponent implements OnInit {
 
   ngOnInit(): void {}
 
-    cadastrar(): void {
+    cadastrarpro(): void {
         let produto: Produto = {
             nome: this.nome,
             descricao: this.descricao,
