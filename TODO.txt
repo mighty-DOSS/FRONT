@@ -1,0 +1,4 @@
+Finalizar nav-bar;
+Implementar tabelas nos componentes lista;
+Implementar estilo para componentes forms;
+Implementar logica de manipulação de dados para checkin checkout;
