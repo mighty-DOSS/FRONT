@@ -25,7 +25,8 @@ import { CadastrarClienteComponent } from './components/views/cliente/cadastrar-
 import { CadastrarQuartoComponent } from './components/views/quarto/cadastrar-quarto/cadastrar-quarto.component';
 import { ListarQuartoComponent } from './components/views/quarto/listar-quarto/listar-quarto.component';
 import { CadastrarReservaComponent } from './components/views/reserva/cadastrar-reserva/cadastrar-reserva.component';
-import { ListarReservaComponent } from './components/views/reserva/listar-reserva/listar-reserva.component'
+import { ListarReservaComponent } from './components/views/reserva/listar-reserva/listar-reserva.component';
+import { TemplateComponent } from './components/template/template.component'
 
 /* caso ocorra erros com '@angular/material' rode "npm install --save @angular/material" */
 
@@ -40,7 +41,8 @@ import { ListarReservaComponent } from './components/views/reserva/listar-reserv
     CadastrarQuartoComponent,
     ListarQuartoComponent,
     CadastrarReservaComponent,
-    ListarReservaComponent
+    ListarReservaComponent,
+    TemplateComponent
   ],
   imports: [
     BrowserModule,

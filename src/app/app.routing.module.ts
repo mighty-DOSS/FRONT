@@ -7,12 +7,11 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { CadastrarProdutoComponent } from "./components/views/produto/cadastrar-produto/cadastrar-produto.component";
 import { ListarProdutoComponent } from "./components/views/produto/listar-produto/listar-produto.component";
-import { ComponentSidebarComponent } from './components/component-sidebar/component-sidebar.component';
 
 const routes: Routes = [
     {
         path: "",
-        component: ComponentSidebarComponent,
+        component: CadastrarProdutoComponent,
     },
     {
         path: "produto/listar",
