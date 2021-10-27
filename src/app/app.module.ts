@@ -19,15 +19,13 @@ import { AppComponent } from './app.component';
 import { HttpClientModule } from "@angular/common/http";
 import { CadastrarProdutoComponent } from './components/views/produto/cadastrar-produto/cadastrar-produto.component';
 import { ListarProdutoComponent } from './components/views/produto/listar-produto/listar-produto.component';
-import { ComponentSidebarComponent } from './components/component-sidebar/component-sidebar.component';
 import { ListarClienteComponent } from './components/views/cliente/listar-cliente/listar-cliente.component';
 import { CadastrarClienteComponent } from './components/views/cliente/cadastrar-cliente/cadastrar-cliente.component';
 import { CadastrarQuartoComponent } from './components/views/quarto/cadastrar-quarto/cadastrar-quarto.component';
 import { ListarQuartoComponent } from './components/views/quarto/listar-quarto/listar-quarto.component';
 import { CadastrarReservaComponent } from './components/views/reserva/cadastrar-reserva/cadastrar-reserva.component';
-import { ListarReservaComponent } from './components/views/reserva/listar-reserva/listar-reserva.component';
-import { TemplateComponent } from './components/template/template.component'
-
+import { ListarReservaComponent } from './components/views/reserva/listar-reserva/listar-reserva.component'
+import { TemplateComponent } from './components/template/template.component';
 /* caso ocorra erros com '@angular/material' rode "npm install --save @angular/material" */
 
 @NgModule({
@@ -35,7 +33,6 @@ import { TemplateComponent } from './components/template/template.component'
     AppComponent,
     CadastrarProdutoComponent,
     ListarProdutoComponent,
-    ComponentSidebarComponent,
     ListarClienteComponent,
     CadastrarClienteComponent,
     CadastrarQuartoComponent,
