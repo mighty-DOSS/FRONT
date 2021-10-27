@@ -1,4 +1,4 @@
-
+/* IMPORTAR MODULOS DO FRAMEWORK */
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from "@angular/forms";
@@ -13,19 +13,21 @@ import { MatSelectModule } from "@angular/material/select";
 import { MatSidenavModule } from "@angular/material/sidenav";
 import { MatTableModule } from "@angular/material/table";
 import { MatToolbarModule } from "@angular/material/toolbar";
-
+/* IMPORTAR COMPONENTS */
 import { AppRoutingModule } from './app.routing.module';
 import { AppComponent } from './app.component';
 import { HttpClientModule } from "@angular/common/http";
 import { CadastrarProdutoComponent } from './components/views/produto/cadastrar-produto/cadastrar-produto.component';
 import { ListarProdutoComponent } from './components/views/produto/listar-produto/listar-produto.component';
 import { ComponentSidebarComponent } from './components/component-sidebar/component-sidebar.component';
-/* import { ListarClienteComponent } from './components/views/cliente/listar-cliente/listar-cliente/listar-cliente.component';
+import { ListarClienteComponent } from './components/views/cliente/listar-cliente/listar-cliente.component';
 import { CadastrarClienteComponent } from './components/views/cliente/cadastrar-cliente/cadastrar-cliente.component';
 import { CadastrarQuartoComponent } from './components/views/quarto/cadastrar-quarto/cadastrar-quarto.component';
 import { ListarQuartoComponent } from './components/views/quarto/listar-quarto/listar-quarto.component';
 import { CadastrarReservaComponent } from './components/views/reserva/cadastrar-reserva/cadastrar-reserva.component';
-import { ListarReservaComponent } from './components/views/reserva/listar-reserva/listar-reserva.component' */
+import { ListarReservaComponent } from './components/views/reserva/listar-reserva/listar-reserva.component'
+
+/* caso ocorra erros com '@angular/material' rode "npm install --save @angular/material" */
 
 @NgModule({
   declarations: [
@@ -33,12 +35,12 @@ import { ListarReservaComponent } from './components/views/reserva/listar-reserv
     CadastrarProdutoComponent,
     ListarProdutoComponent,
     ComponentSidebarComponent,
-    /* ListarClienteComponent,
+    ListarClienteComponent,
     CadastrarClienteComponent,
     CadastrarQuartoComponent,
     ListarQuartoComponent,
     CadastrarReservaComponent,
-    ListarReservaComponent */
+    ListarReservaComponent
   ],
   imports: [
     BrowserModule,
