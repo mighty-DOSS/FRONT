@@ -6,33 +6,31 @@ import { Router } from '@angular/router';
 @Component({
   selector: 'app-cadastrar-quarto',
   templateUrl: './cadastrar-quarto.component.html',
-  styleUrls: ['./cadastrar-quarto.component.scss']
+  styleUrls: ['./cadastrar-quarto.component.css']
 })
-export class CadastrarQuartoComponent implements OnInit {
-  id!: number;
-  numeroquarto!: number;
-  andarquarto!: number;
-  tipoquarto!: number;
-  valordiaria!: number;
-  disponivel!: number;
 
-  constructor(private service: QuartoService, private router: Router) { }
+export class CadastrarQuartoComponent implements OnInit {
+  numeroquarto!: string;
+  andarquarto!: string;
+  tipoquarto!: string;
+  valordiaria!:string;
+  disponivel!: string;
+
+  constructor(private Service: QuartoService, private router: Router) { }
 
   ngOnInit(): void {}
 
-  cadastrarquarto(): void{
+  cadastrarQ(): void{
       let quarto: Quarto = {
-        Id: this.id,
         NumeroQuarto: this.numeroquarto,
         AndarQuarto: this.andarquarto,
         TipoQuarto: this.tipoquarto,
         ValorDiaria: this.valordiaria,
         Disponivel: this.disponivel,
-        
       };
-      this.service.create(quarto).subscribe((quarto) =>{
+      this.Service.create(quarto).subscribe((quarto) =>{
         console.log(quarto);
-        this.router.navigate([""]);
+        this.router.navigate(["quarto/listar"]);
       });
   }
 

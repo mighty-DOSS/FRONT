@@ -1,25 +1,28 @@
-import { Component, OnInit } from '@angular/core';
-import { Quarto } from 'src/app/models/quarto';
 import { QuartoService } from 'src/app/services/quarto.service';
+import { Quarto } from './../../../../models/quarto';
+import { Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-listar-quarto',
   templateUrl: './listar-quarto.component.html',
-  styleUrls: ['./listar-quarto.component.scss']
+  styleUrls: ['./listar-quarto.component.css']
 })
 export class ListarQuartoComponent implements OnInit {
-  quartos: Quarto[] = [];
-  constructor(private service: QuartoService) {}
+    quartos: Quarto[] = [];
+    colunasExibidas: String[] = [  
+        "id",
+        "NumeroQuarto",
+        "AndarQuarto",
+        "TipoQuarto",
+        "ValorDiaria",
+        "Disponivel",
+    ];
 
-  ngOnInit():void {
+  constructor(private service : QuartoService) { }
+
+  ngOnInit(): void {
     this.service.list().subscribe((quartos) => {
-
-      this.quartos = quartos;
-      for (let quarto of quartos)
-      {
-        console.log(quarto);
-      }
-
+    this.quartos = quartos;
     });
   }
 }

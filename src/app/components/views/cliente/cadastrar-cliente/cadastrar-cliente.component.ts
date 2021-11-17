@@ -6,28 +6,28 @@ import { ClienteService } from 'src/app/services/cliente.service';
 @Component({
   selector: 'app-cadastrar-cliente',
   templateUrl: './cadastrar-cliente.component.html',
-  styleUrls: ['./cadastrar-cliente.component.scss']
+  styleUrls: ['./cadastrar-cliente.component.css']
 })
 export class CadastrarClienteComponent implements OnInit {
-  nome!: string;
-  CPF!: number;
-  Email!: string;
-  Data!: number;
+  nomeC!: string;
+  CPF!: string;
+  email!: string;
+  data!: string;
 
   constructor(private service: ClienteService, private router: Router) { }
 
   ngOnInit(): void {}
 
-  cadastrarcli(): void{
+  cadastrarCli(): void{
       let cliente: Cliente = {
-        NomeCliente: this.nome,
+        NomeCliente: this.nomeC,
         CPF: this.CPF,
-        email: this.Email,
-        data: this.Data,
+        email: this.email,
+        data: this.data,
       };
       this.service.create(cliente).subscribe((cliente) =>{
         console.log(cliente);
-        this.router.navigate([""]);
+        this.router.navigate(["cliente/listar"]);
       });
   }
 

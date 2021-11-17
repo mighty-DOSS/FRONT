@@ -2,25 +2,27 @@ import { Component, OnInit } from "@angular/core";
 import { Produto } from "src/app/models/produto";
 import { ProdutoService } from "src/app/services/produto.service";
 
-
 @Component({
-  selector: 'app-listar-produto',
-  templateUrl: './listar-produto.component.html',
-  styleUrls: ['./listar-produto.component.scss']
+    selector: "app-listar-produto",
+    templateUrl: "./listar-produto.component.html",
+    styleUrls: ["./listar-produto.component.css"],
 })
 export class ListarProdutoComponent implements OnInit {
-  produtos: Produto[] = [];
-  constructor(private service: ProdutoService) {}
+    produtos: Produto[] = [];
+    colunasExibidas: String[] = [
+        "id",
+        "nome",
+        "descricao",
+        "preco",
+        "quantidade",
+        "categoria",
+    ];
 
-  ngOnInit():void {
-    this.service.list().subscribe((produtos) => {
+    constructor(private service: ProdutoService) {}
 
-      this.produtos = produtos;
-      for (let produto of produtos)
-      {
-        console.log(produto);
-      }
-
-    });
-  }
+    ngOnInit(): void {
+        this.service.list().subscribe((produtos) => {
+            this.produtos = produtos;
+        });
+    }
 }

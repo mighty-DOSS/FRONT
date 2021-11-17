@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Quarto } from "../models/quarto";
+import { Quarto } from '../models/quarto';
 import { Observable } from "rxjs";
 
 @Injectable({
