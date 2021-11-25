@@ -1,36 +1,40 @@
 <a mat-raised-button color="primary" routerLink="/quarto/cadastrar">
     <mat-icon mat-list-icon>add</mat-icon>
-    Novo Quarto</a>
-<table mat-table [dataSource]="quartos" class="table mat-elevation-z8">
+    Novo Quarto</a
+>
 
+<table mat-table [dataSource]="quartos" class="mat-elevation-z8">
+    <!-- Coluna do Id -->
     <ng-container matColumnDef="id">
         <th mat-header-cell *matHeaderCellDef>#</th>
         <td mat-cell *matCellDef="let quarto">{{ quarto.id }}</td>
     </ng-container>
-
-    <ng-container matColumnDef="NumeroQuarto">
-        <th mat-header-cell *matHeaderCellDef>Numero Quarto</th>
-        <td mat-cell *matCellDef="let quarto">{{ quarto.NumeroQuarto }}</td>
+    <!-- Coluna do Nome -->
+    <ng-container matColumnDef="nome">
+        <th mat-header-cell *matHeaderCellDef>Nome</th>
+        <td mat-cell *matCellDef="let quarto">{{ quarto.nome }}</td>
     </ng-container>
-
-    <ng-container matColumnDef="AndarQuarto">
-        <th mat-header-cell *matHeaderCellDef>Andar Quarto</th>
-        <td mat-cell *matCellDef="let quarto">{{ quarto.AndarQuarto }}</td>
+    <!-- Coluna do Descrição -->
+    <ng-container matColumnDef="descricao">
+        <th mat-header-cell *matHeaderCellDef>Descrição</th>
+        <td mat-cell *matCellDef="let quarto">{{ quarto.descricao }}</td>
     </ng-container>
-
-    <ng-container matColumnDef="TipoQuarto">
-        <th mat-header-cell *matHeaderCellDef>Tipo Quarto</th>
-        <td mat-cell *matCellDef="let quarto">{{ quarto.TipoQuarto }}</td>
+    <!-- Coluna do Quantidade -->
+    <ng-container matColumnDef="disponivel">
+        <th mat-header-cell *matHeaderCellDef>disponivel</th>
+        <td mat-cell *matCellDef="let quarto">{{ quarto.disponivel }}</td>
     </ng-container>
-
-    <ng-container matColumnDef="ValorDiaria">
-        <th mat-header-cell *matHeaderCellDef>Valor Diaria</th>
-        <td mat-cell *matCellDef="let quarto">{{ quarto.ValorDiaria }}</td>
+    <!-- Coluna do Preço -->
+    <ng-container matColumnDef="preco">
+        <th mat-header-cell *matHeaderCellDef>Preço</th>
+        <td mat-cell *matCellDef="let quarto">{{ quarto.preco }}</td>
     </ng-container>
-
-    <ng-container matColumnDef="Disponivel">
-        <th mat-header-cell *matHeaderCellDef>Disponivel</th>
-        <td mat-cell *matCellDef="let quarto">{{ quarto.Disponivel }}</td>
+    <!-- Coluna do Categoria -->
+    <ng-container matColumnDef="categoria">
+        <th mat-header-cell *matHeaderCellDef>Categoria</th>
+        <td mat-cell *matCellDef="let quarto">
+            {{ quarto.categoria!.nome }}
+        </td>
     </ng-container>
 
     <tr mat-header-row *matHeaderRowDef="colunasExibidas"></tr>

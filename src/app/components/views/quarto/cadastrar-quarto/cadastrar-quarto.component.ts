@@ -1,37 +1,46 @@
-import { Quarto } from './../../../../models/quarto';
-import { Component, OnInit } from '@angular/core';
-import { QuartoService } from 'src/app/services/quarto.service';
-import { Router } from '@angular/router';
+import { Component, OnInit } from "@angular/core";
+import { Router } from "@angular/router";
+import { Categoria } from "src/app/models/categoria";
+import { Quarto } from "src/app/models/quarto";
+import { CategoriaService } from "src/app/services/categoria.service";
+import { QuartoService } from "src/app/services/quarto.service";
 
 @Component({
-  selector: 'app-cadastrar-quarto',
-  templateUrl: './cadastrar-quarto.component.html',
-  styleUrls: ['./cadastrar-quarto.component.css']
+    selector: "app-cadastrar-quarto",
+    templateUrl: "./cadastrar-quarto.component.html",
+    styleUrls: ["./cadastrar-quarto.component.css"],
 })
-
 export class CadastrarQuartoComponent implements OnInit {
-  numeroquarto!: string;
-  andarquarto!: string;
-  tipoquarto!: string;
-  valordiaria!:string;
-  disponivel!: string;
+    nome!: string;
+    descricao!: string;
+    disponivel!: number;
+    preco!: number;
+    categorias!: Categoria[];
+    categoriaId!: number;
 
-  constructor(private Service: QuartoService, private router: Router) { }
+    constructor(
+        private router: Router,
+        private produtoService: QuartoService,
+        private categoriaService: CategoriaService
+    ) {}
 
-  ngOnInit(): void {}
+    ngOnInit(): void {
+        this.categoriaService.list().subscribe((categorias) => {
+            this.categorias = categorias;
+        });
+    }
 
-  cadastrarQ(): void{
-      let quarto: Quarto = {
-        NumeroQuarto: this.numeroquarto,
-        AndarQuarto: this.andarquarto,
-        TipoQuarto: this.tipoquarto,
-        ValorDiaria: this.valordiaria,
-        Disponivel: this.disponivel,
-      };
-      this.Service.create(quarto).subscribe((quarto) =>{
-        console.log(quarto);
-        this.router.navigate(["quarto/listar"]);
-      });
-  }
-
+    cadastrar(): void {
+        let quarto: Quarto = {
+            nome: this.nome,
+            descricao: this.descricao,
+            preco: this.preco,
+            disponivel: this.disponivel,
+            categoriaId: this.categoriaId,
+        };
+        this.produtoService.create(quarto).subscribe((quarto) => {
+            console.log(quarto);
+            this.router.navigate(["quarto/listar"]);
+        });
+    }
 }

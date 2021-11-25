@@ -1,11 +1,11 @@
-import { Produto } from "./produto";
+import { Quarto } from "./quarto";
 
 export interface ItemVenda {
     id?: number;
-    produto: Produto;
-    produtoId: number;
+    quarto: Quarto;
+    quartoId: number;
     quantidade: number;
     preco: number;
-    carrinhoId?: string;
+    carrinhoId: string;
     criadoEm?: Date;
 }

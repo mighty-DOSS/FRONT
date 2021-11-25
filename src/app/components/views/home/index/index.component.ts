@@ -1,9 +1,9 @@
-import { ItemVenda } from "./../../../../models/item-venda";
-import { Router } from "@angular/router";
+import { QuartoService } from './../../../../services/quarto.service';
 import { Component, OnInit } from "@angular/core";
-import { ProdutoService } from "src/app/services/produto.service";
-import { Produto } from "src/app/models/produto";
-import { ItemVendaService } from "src/app/services/item-venda.service";
+import { Router } from "@angular/router";
+import { ItemVenda } from "src/app/models/item-venda";
+import { Quarto } from "src/app/models/quarto";
+import { ItemService } from "src/app/services/item.service";
 
 @Component({
     selector: "app-index",
@@ -11,31 +11,31 @@ import { ItemVendaService } from "src/app/services/item-venda.service";
     styleUrls: ["./index.component.css"],
 })
 export class IndexComponent implements OnInit {
-    produtos!: Produto[];
+    quartos: Quarto[] = [];
 
     constructor(
-        private produtoService: ProdutoService,
-        private itemService: ItemVendaService,
+        private quartoService: QuartoService,
+        private itemService: ItemService,
         private router: Router
     ) {}
 
     ngOnInit(): void {
-        this.produtoService.list().subscribe((produtos) => {
-            this.produtos = produtos;
+        this.quartoService.list().subscribe((quartos) => {
+            this.quartos = quartos;
         });
     }
 
-    adicionar(produto: Produto): void {
+    adicionar(quarto: Quarto): void {
         let item: ItemVenda = {
-            produto: produto,
-            produtoId: produto.id!,
+            quarto: quarto,
+            quartoId: quarto.id!,
             quantidade: 1,
-            preco: produto.preco,
+            preco: quarto.preco,
             carrinhoId: localStorage.getItem("carrinhoId")! || "",
         };
         this.itemService.create(item).subscribe((item) => {
-            localStorage.setItem("carrinhoId", item.carrinhoId!);
-            this.router.navigate(["/home/carrinho"]);
+            localStorage.setItem("carrinhoId", item.carrinhoId);
+            this.router.navigate(["home/carrinho"]);
         });
     }
 }

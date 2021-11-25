@@ -1,34 +1,31 @@
 <mat-card>
     <mat-card-header>
-        <mat-card-title>Carrinho de Compras</mat-card-title>
+        <mat-card-title>Reservas</mat-card-title>
     </mat-card-header>
     <mat-card-content>
         <table mat-table [dataSource]="itens" class="table mat-elevation-z8">
-            <!-- Coluna do Imagem -->
             <ng-container matColumnDef="imagem">
                 <th class="header" mat-header-cell *matHeaderCellDef>Imagem</th>
                 <td mat-cell *matCellDef="let item">
-                    <img src="assets/images/sem-imagem.jpg" alt="Sem imagem" />
+                    <img src="assets/images/sem_imagem.jpg" alt="Sem imagem" />
                 </td>
             </ng-container>
-            <!-- Coluna do Nome -->
             <ng-container matColumnDef="nome">
-                <th class="header" mat-header-cell *matHeaderCellDef>Nome</th>
+                <th class="header" mat-header-cell *matHeaderCellDef>Descrição</th>
                 <td mat-cell *matCellDef="let item">
-                    {{ item.produto!.nome }}
+                    {{ item.quarto!.nome }}
                 </td>
             </ng-container>
-            <!-- Coluna do Quantidade -->
             <ng-container matColumnDef="quantidade">
                 <th class="header" mat-header-cell *matHeaderCellDef>
-                    Descrição
+                    Quantidade Dias
                 </th>
                 <td mat-cell *matCellDef="let item">{{ item.quantidade }}</td>
             </ng-container>
-            <!-- Coluna do Quantidade -->
+
             <ng-container matColumnDef="preco">
                 <th class="header" mat-header-cell *matHeaderCellDef>
-                    Quantidade
+                    Preço dia
                 </th>
                 <td mat-cell *matCellDef="let item">
                     {{ item.preco | currency: "BRL" }}

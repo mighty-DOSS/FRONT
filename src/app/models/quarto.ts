@@ -1,8 +1,12 @@
+import { Categoria } from "./categoria";
+
 export interface Quarto {
     id?: number;
-    NumeroQuarto: string;
-    AndarQuarto: string;
-    TipoQuarto: string;
-    ValorDiaria: string;
-    Disponivel: string;
+    nome: string;
+    descricao: string;
+    disponivel: number;
+    preco: number;
+    criadoem?: string;
+    categoriaId: number;
+    categoria?: Categoria;
 }

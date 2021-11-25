@@ -3,6 +3,8 @@ import { NgModule } from "@angular/core";
 import { FormsModule } from "@angular/forms";
 import { MatButtonModule } from "@angular/material/button";
 import { MatCardModule } from "@angular/material/card";
+import { MatFormFieldModule } from "@angular/material/form-field";
+import { MatGridListModule } from "@angular/material/grid-list";
 import { MatIconModule } from "@angular/material/icon";
 import { MatInputModule } from "@angular/material/input";
 import { MatListModule } from "@angular/material/list";
@@ -13,47 +15,39 @@ import { MatToolbarModule } from "@angular/material/toolbar";
 import { BrowserModule } from "@angular/platform-browser";
 import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 import { AppRoutingModule } from "./app-routing.module";
-import { MatGridListModule } from "@angular/material/grid-list";
-//Componentes da aplicação
+// Imports dos componentes da aplicação
 import { AppComponent } from "./app.component";
 import { TemplateComponent } from "./components/template/template.component";
-import { CadastrarProdutoComponent } from "./components/views/produto/cadastrar-produto/cadastrar-produto.component";
-import { ListarProdutoComponent } from "./components/views/produto/listar-produto/listar-produto.component";
 import { IndexComponent } from "./components/views/home/index/index.component";
-import { CarrinhoComponent } from "./components/views/home/carrinho/carrinho.component";
-import { CadastrarClienteComponent } from './components/views/cliente/cadastrar-cliente/cadastrar-cliente.component';
-import { ListarClienteComponent } from './components/views/cliente/listar-cliente/listar-cliente.component';
+import { ListarQuartoComponent } from "./components/views/quarto/listar-quarto/listar-quarto.component";
+import { CarrinhoComponent } from './components/views/home/carrinho/carrinho.component';
 import { CadastrarQuartoComponent } from './components/views/quarto/cadastrar-quarto/cadastrar-quarto.component';
-import { ListarQuartoComponent } from './components/views/quarto/listar-quarto/listar-quarto.component';
 
 @NgModule({
     declarations: [
         AppComponent,
-        ListarProdutoComponent,
-        CadastrarProdutoComponent,
+        ListarQuartoComponent,
+        CadastrarQuartoComponent,
         TemplateComponent,
         IndexComponent,
         CarrinhoComponent,
-        CadastrarClienteComponent,
-        ListarClienteComponent,
-        CadastrarQuartoComponent,
-        ListarQuartoComponent,
     ],
     imports: [
         BrowserModule,
         AppRoutingModule,
         HttpClientModule,
         FormsModule,
-        BrowserAnimationsModule,
         MatToolbarModule,
         MatIconModule,
         MatButtonModule,
         MatSidenavModule,
         MatListModule,
         MatTableModule,
+        MatFormFieldModule,
+        MatInputModule,
         MatCardModule,
         MatSelectModule,
-        MatInputModule,
+        BrowserAnimationsModule,
         MatGridListModule,
     ],
     providers: [],
